@@ -46,8 +46,8 @@
     "dashd"
   ],
   "dependencies": {
-    "@dashevo/dashcore-lib": "^0.19.21",
-    "@dashevo/dashd-rpc": "^2.1.0",
+    "@dashevo/dashcore-lib": "https://github.com/gamerope/dashcore-lib",
+    "@dashevo/dashd-rpc": "https://github.com/gamerope/dashd-rpc",
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "colors": "^1.3.3",
@@ -68,7 +68,7 @@
     "utf-8-validate": "~5.0.2"
   },
   "devDependencies": {
-    "@dashevo/dashcore-p2p": "^1.2.0",
+    "@dashevo/dashcore-p2p": "https://github.com/gamerope/dashcore-p2p",
     "benchmark": "2.1.4",
     "chai": "^4.3.0",
     "coveralls": "^3.0.4",
