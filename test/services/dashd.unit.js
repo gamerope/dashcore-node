@@ -54,7 +54,7 @@ describe('Dash Service', function() {
       should.exist(dashd.balanceCache);
       should.exist(dashd.summaryCache);
       should.exist(dashd.transactionDetailedCache);
-      should.exist(dashd.masternodeListCache);
+      should.exist(dashd.smartnodeListCache);
 
       should.exist(dashd.transactionCache);
       should.exist(dashd.rawTransactionCache);
@@ -5412,12 +5412,12 @@ describe('Dash Service', function() {
 		});
 	});
   describe('#getMNList', function(){
-    it('will call client masternode list and give result', function(done){
+    it('will call client smartnode list and give result', function(done){
 	    var dashd = new DashService(baseConfig);
 	    dashd.isSynced = function(callback) { return callback(null, true) };
 	    dashd.nodes.push({
 		    client: {
-			    masternodelist: function(type, cb){
+			    smartnodelist: function(type, cb){
 			      switch (type){
                       case "rank":
 	                      return cb(null, { result:
@@ -5482,7 +5482,7 @@ describe('Dash Service', function() {
       dashd.isSynced = function(callback) { return callback(null, false) };
       dashd.nodes.push({
         client: {
-          masternodelist: function(type, cb){
+          smartnodelist: function(type, cb){
             switch (type){
               case "rank":
                 return cb(null, { result:
@@ -5537,7 +5537,7 @@ describe('Dash Service', function() {
       dashd.isSynced = function(callback) { return callback(new Error('Failed')) };
       dashd.nodes.push({
         client: {
-          masternodelist: function(type, cb){
+          smartnodelist: function(type, cb){
             switch (type){
               case "rank":
                 return cb(null, { result:
